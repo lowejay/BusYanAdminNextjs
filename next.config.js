@@ -1,17 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    WRAPPER_URL: process.env.WRAPPER_URL,
-  },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/dashboard',
-        permanent: true,
-      },
-    ]
-  },
+    env: {
+        BE_URL: process.env.BE_URL
+    },
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/admin/dashboard',
+                permanent: true,
+            },
+            {
+                source: '/admin',
+                destination: '/admin/dashboard',
+                permanent: true,
+            },
+        ]
+    },
 }
 
 module.exports = nextConfig
